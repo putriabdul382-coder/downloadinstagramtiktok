@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ProDownloader - Download Video TikTok & IG Tanpa Watermark</title>
+    <meta name="description" content="Alat download video TikTok dan Reels Instagram HD tanpa watermark tercepat 2026. Karya Yuda Yudiansyah asal Garut.">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4053679164783511" crossorigin="anonymous"></script>
+
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #0f172a; color: white; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+        .ad-slot { background: #1e293b; border: 1px dashed #334155; margin: 15px 0; width: 100%; max-width: 600px; text-align: center; font-size: 10px; color: #475569; min-height: 90px; }
+        .container { background-color: #1e293b; padding: 2rem; border-radius: 1rem; width: 100%; max-width: 500px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        h1 { color: #38bdf8; margin-bottom: 5px; }
+        .nav-btns { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+        .nav-btn { padding: 8px 15px; border-radius: 20px; border: none; cursor: pointer; font-weight: bold; }
+        .active-tt { background: #ff0050; color: white; }
+        .active-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+        input { width: 100%; padding: 12px; margin: 15px 0; border-radius: 8px; border: none; box-sizing: border-box; }
+        .btn-main { width: 100%; padding: 12px; background-color: #38bdf8; border: none; color: #0f172a; font-weight: bold; border-radius: 8px; cursor: pointer; }
+        #result { display: none; margin-top: 20px; background: #0f172a; padding: 15px; border-radius: 10px; }
+        .btn-wa { background-color: #25d366; color: white; margin-top: 20px; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
+        .article { margin-top: 30px; text-align: left; font-size: 14px; color: #94a3b8; max-width: 600px; }
+    </style>
+</head>
+<body>
+
+    <div class="ad-slot">
+        <p>IKLAN ATAS DISINI</p>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-4053679164783511" data-ad-slot="XXXXXXXXX"></ins>
+    </div>
+
+    <div class="container">
+        <h1>ProDownloader</h1>
+        <p style="font-size: 12px; margin-bottom: 20px;">By Yuda Yudiansyah Asal Garut</p>
+
+        <div class="nav-btns">
+            <button class="nav-btn active-tt" onclick="setMode('TikTok')">TikTok</button>
+            <button class="nav-btn active-ig" onclick="setMode('Instagram')">Instagram</button>
+        </div>
+
+        <p id="modeText">Masukkan Link TikTok:</p>
+        <input type="text" id="videoUrl" placeholder="Tempel link di sini...">
+        <button class="btn-main" onclick="startDownload()">PROSES DOWNLOAD</button>
+
+        <div id="result">
+            <div style="background: #1e293b; padding: 5px; margin-bottom: 10px; font-size: 10px;">
+                <p>IKLAN TENGAH DISINI</p>
+            </div>
+            
+            <p id="timerText">Menyiapkan link: <span id="seconds">5</span>s</p>
+            <a id="dlButton" href="#" target="_blank" style="display: none;">
+                <button class="btn-main" style="background-color: #22c55e; color: white;">DOWNLOAD SEKARANG</button>
+            </a>
+        </div>
+
+        <button class="btn-wa" onclick="shareWa()">Bagikan ke WhatsApp</button>
+    </div>
+
+    <div class="article">
+        <h2>Pusat Unduh Video TikTok & Instagram HD</h2>
+        <p><strong>ProDownloader</strong> adalah alat buatan <strong>Yuda Yudiansyah asal Garut</strong> yang dirancang khusus untuk membantu konten kreator mengunduh footage tanpa watermark dengan kualitas terbaik.</p>
+        <p>Gunakan layanan kami secara gratis selamanya. Cukup tempel link video Reels atau TikTok, tunggu 5 detik, dan simpan ke galeri Anda.</p>
+    </div>
+
+    <script>
+        let currentMode = 'TikTok';
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.getElementById('modeText').innerText = `Masukkan Link ${mode}:`;
+            document.getElementById('result').style.display = 'none';
+        }
+
+        function startDownload() {
+            const url = document.getElementById('videoUrl').value;
+            if(!url) return alert("Link tidak boleh kosong!");
+
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('dlButton').style.display = 'none';
+            document.getElementById('timerText').style.display = 'block';
+
+            let timeLeft = 5;
+            let countdown = setInterval(() => {
+                timeLeft--;
+                document.getElementById('seconds').innerText = timeLeft;
+                if(timeLeft <= 0) {
+                    clearInterval(countdown);
+                    document.getElementById('timerText').style.display = 'none';
+                    document.getElementById('dlButton').style.display = 'block';
+                    // Link download diarahkan ke proses (dummy link)
+                    document.getElementById('dlButton').href = url; 
+                }
+            }, 1000);
+        }
+
+        function shareWa() {
+            const text = "Woi, liat nih web download video TikTok & IG kenceng banget! Karya anak Garut: " + window.location.href;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</body>
+</html>
